@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PARK Junho 개인 포트폴리오와 BFS 체험 사이트">
+  <title>PARK Junho | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="주요 메뉴">
+      <a class="brand" href="#top">PARK JUNHO</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="메뉴 열기">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">소개</a>
+        <a href="#interests">관심 분야</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#bfs">BFS 체험</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Personal Portfolio</p>
+        <h1 id="hero-title">안녕하세요,<br><span>PARK Junho</span>입니다.</h1>
+        <p class="hero-copy">배우고 만드는 과정을 기록하는 개인 포트폴리오입니다. 아래 소개와 프로젝트 정보는 자유롭게 수정할 수 있습니다.</p>
+        <a class="button" href="#bfs">BFS 체험하기</a>
+      </div>
+      <div class="hero-card" aria-label="소개 요약">
+        <div class="avatar" aria-hidden="true">PJ</div>
+        <p class="hero-role">관심 분야: <strong>[여기에 분야 입력]</strong></p>
+        <p>학력: [학교명 · 학과 · 학년]</p>
+        <p>이메일: [이메일 주소]</p>
+      </div>
+    </section>
+
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <p class="eyebrow">About</p>
+      <h2 id="about-title">자기소개</h2>
+      <div class="about-grid">
+        <article class="card">
+          <h3>소개</h3>
+          <p>[간단한 자기소개를 여기에 작성하세요. 예를 들어 관심 있는 기술과 앞으로 배우고 싶은 내용을 적을 수 있습니다.]</p>
+        </article>
+        <article class="card">
+          <h3>학력</h3>
+          <p>[대학교명 · 학과 · 재학 상태를 작성하세요.]</p>
+        </article>
+        <article class="card">
+          <h3>경력 및 활동</h3>
+          <p>[동아리, 프로젝트, 인턴 또는 관련 활동을 작성하세요.]</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="interests" aria-labelledby="interest-title">
+      <div class="container">
+        <p class="eyebrow">Interests</p>
+        <h2 id="interest-title">관심 분야</h2>
+        <div class="tag-grid" aria-label="관심 분야 목록">
+          <article class="interest"><span>01</span><h3>[관심 분야 1]</h3><p>[간단한 설명]</p></article>
+          <article class="interest"><span>02</span><h3>[관심 분야 2]</h3><p>[간단한 설명]</p></article>
+          <article class="interest"><span>03</span><h3>[관심 분야 3]</h3><p>[간단한 설명]</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="projects" aria-labelledby="project-title">
+      <p class="eyebrow">Projects</p>
+      <h2 id="project-title">프로젝트</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-number">01</div>
+          <h3>[프로젝트 이름]</h3>
+          <p>[프로젝트의 목적과 맡은 역할을 작성하세요.]</p>
+          <span class="project-tag">[사용 기술]</span>
+        </article>
+        <article class="project-card">
+          <div class="project-number">02</div>
+          <h3>[프로젝트 이름]</h3>
+          <p>[프로젝트의 목적과 맡은 역할을 작성하세요.]</p>
+          <span class="project-tag">[사용 기술]</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section bfs-section" id="bfs" aria-labelledby="bfs-title">
+      <div class="container">
+        <p class="eyebrow">Data Structures &amp; Algorithms</p>
+        <h2 id="bfs-title">BFS 최단 경로 체험</h2>
+        <p class="section-copy">격자에 출발점과 도착점을 선택하고 벽을 추가한 뒤 최단 경로를 확인해 보세요.</p>
+
+        <div class="bfs-layout">
+          <div class="grid-panel">
+            <div class="toolbars" aria-label="격자 설정 도구">
+              <div class="mode-buttons" role="group" aria-label="편집 모드">
+                <button class="mode-button active" type="button" data-mode="start" aria-pressed="true">출발점 설정</button>
+                <button class="mode-button" type="button" data-mode="end" aria-pressed="false">도착점 설정</button>
+                <button class="mode-button" type="button" data-mode="wall" aria-pressed="false">벽 만들기</button>
+                <button class="mode-button" type="button" data-mode="erase" aria-pressed="false">벽 지우기</button>
+              </div>
+              <div class="action-buttons">
+                <button class="button" id="start-bfs" type="button">탐색 시작</button>
+                <button class="button button-secondary" id="reset-grid" type="button">초기화</button>
+              </div>
+            </div>
+
+            <div class="legend" aria-label="격자 색상 안내">
+              <span><i class="legend-box start"></i>출발점</span>
+              <span><i class="legend-box end"></i>도착점</span>
+              <span><i class="legend-box wall"></i>벽</span>
+              <span><i class="legend-box visited"></i>탐색한 칸</span>
+              <span><i class="legend-box path"></i>최단 경로</span>
+            </div>
+
+            <div id="grid" class="grid" role="grid" aria-label="최단 경로 BFS 격자"></div>
+            <div id="status" class="status" role="status" aria-live="polite">출발점과 도착점을 설정한 후 벽을 만들어 보세요.</div>
+          </div>
+
+          <aside class="algorithm-guide" aria-labelledby="guide-title">
+            <h3 id="guide-title">알고리즘 안내</h3>
+            <div class="guide-item">
+              <strong>BFS란?</strong>
+              <p>너비 우선 탐색입니다. 출발점에서 가까운 칸부터 차례로 살펴봅니다. 상하좌우로만 이동하고 이동 비용은 모두 1이므로 가장 먼저 도착점에 도달한 경로가 최단 경로입니다.</p>
+            </div>
+            <div class="guide-item">
+              <strong>FIFO 큐</strong>
+              <p>JavaScript 배열과 head 인덱스로 큐를 사용합니다. 칸은 큐의 뒤에 넣고 head 위치의 칸을 꺼냅니다.</p>
+            </div>
+            <div class="guide-item">
+              <strong>방문 처리</strong>
+              <p>칸을 큐에 넣는 순간 방문 표시를 합니다. 이를 통해 같은 칸을 중복해서 큐에 넣는 일을 막습니다.</p>
+            </div>
+            <div class="guide-item">
+              <strong>경로 복원</strong>
+              <p>각 칸에 방문하기 직전의 이전 칸을 저장합니다. 도착점에서 이전 칸을 따라 출발점까지 거꾸로 이동해 최단 경로를 복원합니다.</p>
+            </div>
+            <div class="guide-item usage">
+              <strong>사용 방법</strong>
+              <ol>
+                <li>출발점과 도착점을 각각 한 번씩 선택합니다.</li>
+                <li>벽 만들기로 장애물을 추가하거나 벽 지우기로 제거합니다.</li>
+                <li>탐색 시작을 누르면 색상과 이동 횟수가 표시됩니다.</li>
+              </ol>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> PARK Junho</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
